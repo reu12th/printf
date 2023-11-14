@@ -1,7 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
-
 #include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -14,6 +15,14 @@ int printi(va_list args);
 int printd(va_list args);
 int printb(va_list val);
 int printu(va_list args);
-
+int printo(va_list val);
+int printx(va_list val);
+int printX(va_list val);
+int printS(va_list val);
+int _printX(unsigned int n);
+int printp(va_list val);
+int _printx(unsigned long int n);
+int printr(va_list args)
+int printR13(va_list args)
 
 #endif
