@@ -2,7 +2,7 @@
 
 
 
-[link](https://gist.github.com/reu12th/printf)
+[link](https://github.com/reu12th/printf)
 
 
 ### Developers

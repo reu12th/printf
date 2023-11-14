@@ -6,7 +6,7 @@
  * Return: string's length
  */
 
-int str_print(val_list val)
+int str_print(va_list val)
 {
 	char *s;
 	int i;
