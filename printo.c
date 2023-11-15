@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
  * printo - octal conversion
@@ -21,8 +21,6 @@ int printo(va_list val)
 	c++;
 	arr = malloc(sizeof(int) * c);
 
-	if (arr == NULL)
-		return (NULL);
 	i = 0;
 	while (i < c)
 	{
@@ -34,7 +32,7 @@ int printo(va_list val)
 	i = c - 1;
 	while (i >= 0)
 	{
-		_putchar(arr[i]) + '0';
+		_putchar(arr[i] + '0');
 		i--;
 	}
 	free(arr);

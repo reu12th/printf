@@ -8,16 +8,16 @@
 
 /**
  * struct format - printf converter
- * @id: type char pointer of the specifier
- * @func: function for the conversion specifier
+ * @ph: type char pointer of the specifier
+ * @function: function for the conversion specifier
  *
  */
 
 typedef struct format
 {
-	char *id;
-	int (*func)();
-} merge;
+	char *ph;
+	int (*function)();
+} convert;
 
 int *_strcpy(char *dest, char *src);
 int _putchar(char c);

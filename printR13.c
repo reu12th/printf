@@ -6,20 +6,18 @@
  */
 int printR13(va_list args)
 {
-	int i, j;
-	int k = 0, c = 0;
+	int i, j, c = 0;
+	int k = 0;
 	char *s = va_arg(args, char*);
 	char xl[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 	char yl[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
 	if (s == NULL)
 		s = "(null)";
-	i = 0;
-	while (s[i])
+	for (i = 0; s[i]; i++)
 	{
 		k = 0;
-		j = 0;
-		while (xl[j] && !k)
+		for (j = 0; xl[j] && !k; j++)
 		{
 			if (s[i] == xl[j])
 			{
@@ -27,14 +25,12 @@ int printR13(va_list args)
 				c++;
 				k = 1;
 			}
-		j++;
 		}
 		if (!k)
 		{
 			_putchar(s[i]);
 			c++;
 		}
-	i++;
 	}
 	return (c);
 }

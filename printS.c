@@ -9,35 +9,32 @@
 int printS(va_list val)
 {
 	char *s;
-	int i, v;
-	int len = 0;
+	int i, length = 0;
+	int value;
 
 	s = va_arg(val, char *);
 	if (s == NULL)
 		s = "(null)";
-
-	i = 0;
-	while (s[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] < 32 || s[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
-			len += 2;
-			v = s[i];
-			if (v < 16)
+			length = length + 2;
+			value = s[i];
+			if (value < 16)
 			{
 				_putchar('0');
-				len++;
+				length++;
 			}
-			len += _printX(v);
+			length = length + _printX(value);
 		}
 		else
 		{
 			_putchar(s[i]);
-			len++;
+			length++;
 		}
-		i++;
 	}
-	return (len);
+	return (length);
 }

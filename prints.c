@@ -13,31 +13,19 @@ int str_print(va_list val)
 	int len;
 
 	s = va_arg(val, char *);
-
 	if (s == NULL)
 	{
 		s = "(null)";
 		len = _strlen(s);
-
-		i = 0;
-		while (i < len)
-		{
+		for (i = 0; i < len; i++)
 			_putchar(s[i]);
-			i++;
-		}
-
 		return (len);
 	}
 	else
 	{
 		len = _strlen(s);
-		i = 0;
-		while (i < len)
-		{
+		for (i = 0; i < len; i++)
 			_putchar(s[i]);
-			i++;
-		}
-
 		return (len);
 	}
 }
