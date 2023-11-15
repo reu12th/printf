@@ -11,7 +11,8 @@ int printp(va_list val)
 	void *p;
 	char *s = "(nil)";
 	long int g;
-	int i, h;
+	int h;
+	int i;
 
 	p = va_arg(val, void *);
 	if (p == NULL)
@@ -29,5 +30,5 @@ int printp(va_list val)
 	_putchar('x');
 	h = _printx(g);
 
-	return (g + 2);
+	return (h + 2);
 }
