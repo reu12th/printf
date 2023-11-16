@@ -27,6 +27,6 @@ int printp(va_list val)
 	x = (unsigned long int)p;
 	_putchar('0');
 	_putchar('x');
-	y = print_hex_extra(x);
+	y = _printx(x);
 	return (y + 2);
 }
