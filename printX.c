@@ -8,10 +8,10 @@
 
 int printX(va_list val)
 {
-	unsigned int n = va_arg(val, unsigned int);
-	unsigned int t = n;
 	int i, *arr;
 	int c = 0, hex = 16;
+	unsigned int n = va_arg(val, unsigned int);
+	unsigned int t = n;
 
 	while (n / hex != 0)
 	{
@@ -21,22 +21,16 @@ int printX(va_list val)
 	c++;
 
 	arr = malloc(sizeof(int) * c);
-
-	i = 0;
-	while (i < c)
+	for (i = 0; i < c; i++)
 	{
-		arr[i] = t % hex;
-		t /= hex;
-		i++;
+		arr[i] = t % 16;
+		t /= 16;
 	}
-
-	i = c - 1;
-	while (i >= 0)
+	for (i = c - 1; i >= 0; i--)
 	{
 		if (arr[i] > 9)
 			arr[i] = arr[i] + 7;
 		_putchar(arr[i] + '0');
-		i--;
 	}
 	free(arr);
 

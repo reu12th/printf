@@ -8,16 +8,16 @@
 
 /**
  * struct format - printf converter
- * @ph: type char pointer of the specifier
- * @function: function for the conversion specifier
+ * @id: type char pointer of the specifier
+ * @func: function for the conversion specifier
  *
  */
 
 typedef struct format
 {
-	char *ph;
-	int (*function)();
-} convert;
+	char *id;
+	int (*func)();
+} merge;
 
 int *_strcpy(char *dest, char *src);
 int _putchar(char c);
@@ -41,4 +41,4 @@ int _printx(unsigned long int n);
 int printr(va_list args);
 int printR13(va_list args);
 
-#endif /* MAIN_H */ 
+#endif/*MAIN_H*/

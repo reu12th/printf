@@ -8,29 +8,33 @@
 
 int _printX(unsigned int n)
 {
-	int i;
-	int *arr;
-	int c = 0;
-	unsigned int t = n;
+	long int i;
+	int hex = 16;
+	long int *arr;
+	long int c = 0;
+	unsigned long int t = n;
 
-	while (n / 16 != 0)
+	while (n / hex != 0)
 	{
-		n /= 16;
+		n /= hex;
 		c++;
 	}
 	c++;
-	arr = malloc(c * sizeof(int));
-
-	for (i = 0; i < c; i++)
+	arr = malloc(c * sizeof(long int));
+	i = 0;
+	while (i < c)
 	{
-		arr[i] = t % 16;
-		t /= 16;
+		arr[i] = t % hex;
+		t /= hex;
+		i++;
 	}
-	for (i = c - 1; i >= 0; i--)
+	i = c - 1;
+	while (i >= 0)
 	{
 		if (arr[i] > 9)
-			arr[i] = arr[i] + 7;
+			arr[i] += 7;
 		_putchar(arr[i] + '0');
+		i--;
 	}
 	free(arr);
 	return (c);

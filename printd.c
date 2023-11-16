@@ -9,11 +9,12 @@
 int printd(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, d, t = 10, ex = 1, i = 1;
-	int l = n % t;
+	int t = 10;
+	int num, l = n % t, digit, exp = 1, i = 1;
 
-	n /= t;
+	n = n / t;
 	num = n;
+
 	if (l < 0)
 	{
 		_putchar('-');
@@ -26,19 +27,18 @@ int printd(va_list args)
 	{
 		while (num / t != 0)
 		{
-			ex *= t;
+			exp *= t;
 			num /= t;
 		}
-
-		for (num = n; ex > 0; i++)
+		for (num = n; exp > 0; i++)
 		{
-			d = num / ex;
-			_putchar(d + '0');
-			num -= (d * ex);
-			ex /= t;
+			digit = num / exp;
+			_putchar(digit + '0');
+			num -= (digit * exp);
+			exp /= t;
 		}
 	}
-	_putchar(l + 'o');
+	_putchar(l + '0');
 
 	return (i);
 }

@@ -9,11 +9,13 @@
 int printu(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
-	int num, d, t = 10, ex = 1, i = 1;
-	int l = n % t;
+	int t = 10;
+	int num, l = n % t, d, ex = 1;
+	int  i = 1;
 
 	n /= t;
 	num = n;
+
 	if (l < 0)
 	{
 		_putchar('-');
@@ -29,7 +31,6 @@ int printu(va_list args)
 			ex *= t;
 			num /= t;
 		}
-
 		for (num = n; ex > 0; i++)
 		{
 			d = num / ex;
@@ -38,7 +39,7 @@ int printu(va_list args)
 			ex /= t;
 		}
 	}
-	_putchar(l + 'o');
+	_putchar(l + '0');
 
 	return (i);
 }
