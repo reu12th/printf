@@ -21,6 +21,7 @@ int printp(va_list val)
 		while (s[i] != '\0')
 		{
 			_putchar(s[i]);
+			i++;
 		}
 		return (i);
 	}
