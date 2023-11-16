@@ -10,26 +10,23 @@ int printp(va_list val)
 {
 	void *p;
 	char *s = "(nil)";
-	long int g;
-	int h;
+	long int x;
+	int y;
 	int i;
 
-	p = va_arg(val, void *);
+	p = va_arg(val, void*);
 	if (p == NULL)
 	{
-		i = 0;
-		while (s[i] != '\0')
+		for (i = 0; s[i] != '\0'; i++)
 		{
 			_putchar(s[i]);
-			i++;
 		}
 		return (i);
 	}
 
-	g = (unsigned long int)p;
+	x = (unsigned long int)p;
 	_putchar('0');
 	_putchar('x');
-	h = _printx(g);
-
-	return (h + 2);
+	y = print_hex_extra(x);
+	return (y + 2);
 }
