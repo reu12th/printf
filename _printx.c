@@ -6,32 +6,37 @@
  * Return: count
  */
 
-int _printx(unsigned long int num)
+int _printx(unsigned long int n)
 {
 	long int i;
-	long int *array;
-	long int counter = 0;
-	unsigned long int temp = num;
+	int hex = 16;
+	long int *arr;
+	long int c = 0;
+	unsigned long int t = n;
 
-	while (num / 16 != 0)
+	while (n / hex != 0)
 	{
-		num /= 16;
-		counter++;
+		n /= hex;
+		c++;
 	}
-	counter++;
-	array = malloc(counter * sizeof(long int));
+	c++;
+	arr = malloc(c * sizeof(long int));
+	i = 0;
+	while (i < c)
+	{
+		arr[i] = t % hex;
+		t /= hex;
+		i++;
+	}
+	i = c - 1;
+	while (i >= 0)
+	{
+		if (arr[i] > 9)
+			arr[i] += 39;
+		_putchar(arr[i] + '0');
+		i--;
+	}
+	free(arr);
 
-	for (i = 0; i < counter; i++)
-	{
-		array[i] = temp % 16;
-		temp = temp / 16;
-	}
-	for (i = counter - 1; i >= 0; i--)
-	{
-		if (array[i] > 9)
-			array[i] = array[i] + 39;
-		_putchar(array[i] + '0');
-	}
-	free(array);
-	return (counter);
+	return (c);
 }
