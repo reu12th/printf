@@ -8,28 +8,31 @@
 
 int printb(va_list val)
 {
-	int flag = 0;
-	int cont = 0;
-	int i, a = 1, b;
+	int f = 0;
+	int c = 0;
+	int i, m = 1, n;
 	unsigned int num = va_arg(val, unsigned int);
 	unsigned int p;
 
-	for (i = 0; i < 32; i++)
+	i = 0;
+	while (i < 32)
 	{
-		p = ((a << (31 - i)) & num);
+		p = ((m << (31 - i)) & num);
 		if (p >> (31 - i))
-			flag = 1;
-		if (flag)
+			f = 1;
+		if (f)
 		{
-			b = p >> (31 - i);
-			_putchar(b + 48);
-			cont++;
+			n = p >> (31 - i);
+			_putchar(n + 48);
+			c++;
 		}
+		i++;
 	}
-	if (cont == 0)
+	if (c == 0)
 	{
-		cont++;
+		c++;
 		_putchar('0');
 	}
-	return (cont);
+
+	return (c);
 }
